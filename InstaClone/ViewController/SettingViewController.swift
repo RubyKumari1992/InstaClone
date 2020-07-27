@@ -12,27 +12,17 @@ import Firebase
 class SettingViewController: UIViewController {
     
     // MARK: Outlets
-
+    
     @IBOutlet weak var profileImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        print(Auth.auth().currentUser?.photoURL)
-        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-        changeRequest?.displayName = "Ruby"
-      //  changeRequest?.photoURL = nil
-                changeRequest?.commitChanges(completion: { (error) in
-            if let error = error {
-                print("there is an error wile updating")
-            }
-        })
-        print("display Name\(Auth.auth().currentUser?.displayName))")
     }
     
     @IBAction func signoutTapped(_ sender: Any) {
         do {
-          try! Auth.auth().signOut()
+            try! Auth.auth().signOut()
         }
         
         self.performSegue(withIdentifier: "Login", sender: nil)
@@ -42,7 +32,16 @@ class SettingViewController: UIViewController {
     
     @IBAction func editProfile(_ sender: Any) {
         guard let view = EditProfileViewController.instaintateViewControllerFromStoryboard() else { return }
-    
+        
         self.navigationController?.pushViewController(view, animated: true)
+    }
+    
+    
+    @IBAction func signoutPressed(_ sender: Any) {
+        do {
+            try! Auth.auth().signOut()
+        }
+        
+        self.performSegue(withIdentifier: "Login", sender: nil)
     }
 }

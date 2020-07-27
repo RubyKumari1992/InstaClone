@@ -24,7 +24,7 @@ class ProfileDetails {
      
      */
     
-    func updateProfile(image: UIImage, name: String, previousImageURL: String?, completion: @escaping (Error?) -> ()) {
+    func updateProfile(image: UIImage, name: String, previousImageURL: String?, completion: @escaping (Error?, URL?) -> ()) {
         DispatchQueue.global(qos: .background).async {
             guard let data = image.jpegData(compressionQuality: 0.5)  else { return }
             if previousImageURL != nil {
@@ -39,12 +39,9 @@ class ProfileDetails {
             }
             self.updateProfileImage(data: data) { (error, url) in
                 print("URL after updating image\(String(describing: url))")
-                if url != nil {
-                    FirebaseHelper.shared.updateProfileForPost(url: url) { (result) in
-                        print(result)
-                    }
+                if url != nil  && error == nil {
+                    completion(nil, url)
                 }
-                completion(error)
             }
         }
     }

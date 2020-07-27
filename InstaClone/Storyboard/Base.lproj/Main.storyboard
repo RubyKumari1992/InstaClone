@@ -103,7 +103,7 @@
             <objects>
                 <viewController id="gqv-sd-8SS" customClass="UploadViewController" customModule="InstaClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7l5-pS-vZc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="750" image="insta" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vom-ie-ECh">
@@ -162,7 +162,7 @@
             <objects>
                 <viewController id="bVd-7g-igp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dnd-ky-oQp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Kie-d6-6iU"/>
@@ -284,20 +284,20 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vhj-Y7-Pay" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2442" y="962"/>
+            <point key="canvasLocation" x="1680" y="1680"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="sr5-vP-Y8U">
             <objects>
                 <viewController id="yMd-6I-JqO" customClass="SettingViewController" customModule="InstaClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DKK-1D-2Fj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wH-xM-Dfd" userLabel="ContainerView">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5gJ-pI-gmC">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="insta" translatesAutoresizingMaskIntoConstraints="NO" id="5gJ-pI-gmC">
                                         <rect key="frame" x="87" y="76" width="240" height="133"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2s-93-fVD">
@@ -305,6 +305,14 @@
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="editProfile:" destination="yMd-6I-JqO" eventType="touchUpInside" id="mNB-aG-NZ3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="015-WG-CPA">
+                                        <rect key="frame" x="87" y="402" width="240" height="67"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Signout"/>
+                                        <connections>
+                                            <action selector="signoutPressed:" destination="yMd-6I-JqO" eventType="touchUpInside" id="X0z-zz-86a"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -344,11 +352,11 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="XYd-La-xgq" customClass="HomeViewController" customModule="InstaClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Luv-1O-hzG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ve6-Ue-9p4">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToFeedCell" id="Qam-rc-9zP" customClass="FeedCell" customModule="InstaClone" customModuleProvider="target">
@@ -459,10 +467,11 @@
         <scene sceneID="dBR-uZ-dIl">
             <objects>
                 <tabBarController storyboardIdentifier="toFeed" id="UaI-DB-v8U" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Z2K-gF-9xu">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Z2K-gF-9xu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="XYd-La-xgq" kind="relationship" relationship="viewControllers" id="sQH-61-4WU"/>
@@ -490,7 +499,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SmR-Pw-Guv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3428.985507246377" y="898.66071428571422"/>
+            <point key="canvasLocation" x="2519" y="920"/>
         </scene>
         <!--User-->
         <scene sceneID="Ocy-Y1-fWu">
@@ -513,7 +522,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Psc-iH-Uu2"/>
+        <segue reference="sQH-61-4WU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="folder.circle.fill" catalog="system" width="128" height="121"/>

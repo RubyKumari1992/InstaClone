@@ -17,6 +17,7 @@ class DataViewModel: NSObject {
  
     var delegate: DataViewModelProtocol?
      var postsArray = [Posts]()
+    
     // MARK: Initializer
     
     init(delegate: DataViewModelProtocol) {

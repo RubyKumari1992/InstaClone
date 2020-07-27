@@ -55,17 +55,20 @@ class EditProfileViewController: UIViewController {
         if self.nameTextFiled.text != "" {
             guard let image = profileImage.image else { return }
             let profile = ProfileDetails()
-            profile.updateProfile(image: image, name: self.nameTextFiled.text!, previousImageURL: Auth.auth().currentUser?.photoURL?.absoluteString) { (error) in
+            profile.updateProfile(image: image, name: self.nameTextFiled.text!, previousImageURL: Auth.auth().currentUser?.photoURL?.absoluteString) { (error, url) in
                 if error != nil {
                     print("there is some error while uploading image")
+                    return
+                }
+                FirebaseHelper.shared.updateProfileForPost(url: Auth.auth().currentUser?.photoURL) { (result) in
+                    if result == true {
+                        self.tabBarController?.selectedIndex = 0
+                    }
                 }
                 print("after updating profile url")
-                 print(Auth.auth().currentUser?.photoURL)
-                self.tabBarController?.selectedIndex = 0
+                print(Auth.auth().currentUser?.photoURL)
+                
             }
-            // FirebaseHelper.shared.updateProfileURL(url: Auth.auth().currentUser?.photoURL?.absoluteString)
-            
-
         }
     }
     

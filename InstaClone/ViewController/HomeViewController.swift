@@ -23,17 +23,18 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataViewModel = DataViewModel(delegate: self)
-      feedTableView.reloadData()
-      
+        feedTableView.reloadData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-          dataViewModel?.getData()
+        dataViewModel?.getData()
         
     }
 }
 
+// MARK:- Extension
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,7 +44,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToFeedCell", for: indexPath) as! FeedCell
         cell.confiureCell(posts: dataArray[indexPath.row], tag: cell.tag, index: indexPath.row)
-            cell.selectionStyle = .none
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -54,7 +55,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension HomeViewController: DataViewModelProtocol {
-
+    
     func receiveData(posts: [Posts]) {
         self.dataArray = posts
         self.feedTableView.reloadData()

@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.hidesBarsOnTap = true
-        // Do any additional setup after loading the view.
     }
     
     class func instaintateViewControllerFromStoryboard() -> LoginViewController? {
@@ -50,17 +49,17 @@ class LoginViewController: UIViewController {
     
     @IBAction func registerUser(_ sender: Any) {
         if self.emailField.text != "" && self.passwordField.text != "" {
-
+            
             Auth.auth().createUser(withEmail: self.emailField.text!, password: self.passwordField.text!) { (authData, error) in
-
+                
                 if error != nil {
                     self.makeAnAlert(title: "Error Occured", Description: error?.localizedDescription ?? "Error")
-
+                    
                 } else {
                     self.performSegue(withIdentifier: "toFeed", sender: nil)
-
+                    
                 }
-
+                
             }
         } else {
             self.makeAnAlert(title: "Error", Description: "Please enter Email/Passwod")

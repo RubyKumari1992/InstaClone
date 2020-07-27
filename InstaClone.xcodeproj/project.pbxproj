@@ -24,6 +24,7 @@
 		0C9C9DF524823DE9009C9615 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9C9DF424823DE9009C9615 /* HomeViewController.swift */; };
 		0C9C9DF724823E2E009C9615 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9C9DF624823E2E009C9615 /* UploadViewController.swift */; };
 		0C9C9DF924823E4D009C9615 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9C9DF824823E4D009C9615 /* SettingViewController.swift */; };
+		0CA3863424C5F72E00E2BA4B /* UploadViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA3863324C5F72E00E2BA4B /* UploadViewModal.swift */; };
 		0CA976E62483762E006B8E6E /* StoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA976E52483762E006B8E6E /* StoreData.swift */; };
 		0CC1007524B9A9E70014D7F7 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC1007424B9A9E70014D7F7 /* UIImage+Extension.swift */; };
 		0CC32C2B248DE3A400863220 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC32C2A248DE3A400863220 /* SDWebImage.framework */; };
@@ -66,6 +67,7 @@
 		0C9C9DF424823DE9009C9615 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0C9C9DF624823E2E009C9615 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		0C9C9DF824823E4D009C9615 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		0CA3863324C5F72E00E2BA4B /* UploadViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewModal.swift; sourceTree = "<group>"; };
 		0CA976E52483762E006B8E6E /* StoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreData.swift; sourceTree = "<group>"; };
 		0CC1007424B9A9E70014D7F7 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		0CC32C2A248DE3A400863220 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				0C63B68424B3791200EC32ED /* UserPosts.swift */,
+				0CA976E52483762E006B8E6E /* StoreData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,9 +211,9 @@
 		0CA976E4248375FB006B8E6E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0CA976E52483762E006B8E6E /* StoreData.swift */,
 				0C63B68124B3766500EC32ED /* DataViewModel.swift */,
 				0CD1BF6B24BEDD1A00FBE43E /* ProfileViewModal.swift */,
+				0CA3863324C5F72E00E2BA4B /* UploadViewModal.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				0C58313824B98DF100F04B66 /* FireBaseHelper.swift in Sources */,
 				0CC1007524B9A9E70014D7F7 /* UIImage+Extension.swift in Sources */,
 				0CFC7F0824C1FB1800A56AE6 /* FirebaseConstants.swift in Sources */,
+				0CA3863424C5F72E00E2BA4B /* UploadViewModal.swift in Sources */,
 				0C9C9DCB24821B69009C9615 /* ViewController.swift in Sources */,
 				0C9C9DF724823E2E009C9615 /* UploadViewController.swift in Sources */,
 				0C9C9DC724821B69009C9615 /* AppDelegate.swift in Sources */,
