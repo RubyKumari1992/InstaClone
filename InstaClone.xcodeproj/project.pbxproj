@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C21204E24BDFAF900788B86 /* ProfileDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C21204D24BDFAF900788B86 /* ProfileDetails.swift */; };
 		0C58313824B98DF100F04B66 /* FireBaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C58313724B98DF100F04B66 /* FireBaseHelper.swift */; };
 		0C63B68224B3766500EC32ED /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C63B68124B3766500EC32ED /* DataViewModel.swift */; };
 		0C63B68524B3791200EC32ED /* UserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C63B68424B3791200EC32ED /* UserPosts.swift */; };
@@ -28,7 +27,7 @@
 		0CA976E62483762E006B8E6E /* StoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA976E52483762E006B8E6E /* StoreData.swift */; };
 		0CC1007524B9A9E70014D7F7 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC1007424B9A9E70014D7F7 /* UIImage+Extension.swift */; };
 		0CC32C2B248DE3A400863220 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC32C2A248DE3A400863220 /* SDWebImage.framework */; };
-		0CD1BF6C24BEDD1A00FBE43E /* ProfileViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD1BF6B24BEDD1A00FBE43E /* ProfileViewModal.swift */; };
+		0CCBB2E424CF282C001387D0 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBB2E324CF282C001387D0 /* ProgressView.swift */; };
 		0CD7344824BB3A8A0091228C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD7344724BB3A8A0091228C /* EditProfileViewController.swift */; };
 		0CFC7F0824C1FB1800A56AE6 /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC7F0724C1FB1800A56AE6 /* FirebaseConstants.swift */; };
 		57D2C7760613CB1E59068DEC /* Pods_InstaCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649B27C29C97E60A9CF8E139 /* Pods_InstaCloneTests.framework */; };
@@ -46,7 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C21204D24BDFAF900788B86 /* ProfileDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetails.swift; sourceTree = "<group>"; };
 		0C58313724B98DF100F04B66 /* FireBaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseHelper.swift; sourceTree = "<group>"; };
 		0C63B68124B3766500EC32ED /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
 		0C63B68424B3791200EC32ED /* UserPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPosts.swift; sourceTree = "<group>"; };
@@ -71,7 +69,7 @@
 		0CA976E52483762E006B8E6E /* StoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreData.swift; sourceTree = "<group>"; };
 		0CC1007424B9A9E70014D7F7 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		0CC32C2A248DE3A400863220 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0CD1BF6B24BEDD1A00FBE43E /* ProfileViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModal.swift; sourceTree = "<group>"; };
+		0CCBB2E324CF282C001387D0 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		0CD7344724BB3A8A0091228C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		0CFC7F0724C1FB1800A56AE6 /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
 		1D7A07ADBEDC97DB329E7B29 /* Pods_InstaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				0C58313724B98DF100F04B66 /* FireBaseHelper.swift */,
-				0C21204D24BDFAF900788B86 /* ProfileDetails.swift */,
 				0CFC7F0724C1FB1800A56AE6 /* FirebaseConstants.swift */,
 			);
 			path = DatabaseHelper;
@@ -196,6 +193,7 @@
 			children = (
 				0C9C9DCC24821B69009C9615 /* Main.storyboard */,
 				0C8A973224861FC40079E346 /* customCell.swift */,
+				0CCBB2E324CF282C001387D0 /* ProgressView.swift */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -212,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				0C63B68124B3766500EC32ED /* DataViewModel.swift */,
-				0CD1BF6B24BEDD1A00FBE43E /* ProfileViewModal.swift */,
 				0CA3863324C5F72E00E2BA4B /* UploadViewModal.swift */,
 			);
 			path = ViewModel;
@@ -419,12 +416,11 @@
 				0C9C9DF524823DE9009C9615 /* HomeViewController.swift in Sources */,
 				0CD7344824BB3A8A0091228C /* EditProfileViewController.swift in Sources */,
 				0C63B68524B3791200EC32ED /* UserPosts.swift in Sources */,
-				0C21204E24BDFAF900788B86 /* ProfileDetails.swift in Sources */,
 				0C769B3E24B618CA0067246F /* Snapshot+Extension.swift in Sources */,
 				0C9C9DF924823E4D009C9615 /* SettingViewController.swift in Sources */,
 				0C8A973324861FC40079E346 /* customCell.swift in Sources */,
 				0C63B68224B3766500EC32ED /* DataViewModel.swift in Sources */,
-				0CD1BF6C24BEDD1A00FBE43E /* ProfileViewModal.swift in Sources */,
+				0CCBB2E424CF282C001387D0 /* ProgressView.swift in Sources */,
 				0CA976E62483762E006B8E6E /* StoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

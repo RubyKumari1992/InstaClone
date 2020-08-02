@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         dataViewModel = DataViewModel(delegate: self)
         feedTableView.reloadData()
         
@@ -29,6 +30,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        ProgressView.sharedInstance.showLoader(view: view)
         dataViewModel?.getData()
         
     }
@@ -59,5 +61,6 @@ extension HomeViewController: DataViewModelProtocol {
     func receiveData(posts: [Posts]) {
         self.dataArray = posts
         self.feedTableView.reloadData()
+        ProgressView.sharedInstance.removeLoader()
     }
 }

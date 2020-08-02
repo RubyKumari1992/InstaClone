@@ -15,8 +15,14 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var nameTextFiled: UITextField!
+    
+    var uploadViewModal: UploadViewModal?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        ProgressView.sharedInstance.showLoader(view: view)
+        uploadViewModal = UploadViewModal(delegate: self)
         self.enableUserInteraction()
         self.updateView()
     }
@@ -28,10 +34,12 @@ class EditProfileViewController: UIViewController {
     }
     
     private func updateView() {
+        
         self.profileImage.setProfileImageByURL(urlString: Auth.auth().currentUser?.photoURL?.absoluteString)
         guard let email = Auth.auth().currentUser?.email, let name = Auth.auth().currentUser?.displayName else { return }
         self.emailTextField.text! = email
         self.nameTextFiled.text! = name
+        ProgressView.sharedInstance.removeLoader()
     }
     
     private func enableUserInteraction() {
@@ -51,31 +59,21 @@ class EditProfileViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func saveProfileButton(_ sender: Any) {
-        print(Auth.auth().currentUser?.photoURL)
         if self.nameTextFiled.text != "" {
             guard let image = profileImage.image else { return }
-            let profile = ProfileDetails()
-            profile.updateProfile(image: image, name: self.nameTextFiled.text!, previousImageURL: Auth.auth().currentUser?.photoURL?.absoluteString) { (error, url) in
-                if error != nil {
-                    print("there is some error while uploading image")
-                    return
-                }
-                FirebaseHelper.shared.updateProfileForPost(url: Auth.auth().currentUser?.photoURL) { (result) in
-                    if result == true {
-                        self.tabBarController?.selectedIndex = 0
-                    }
-                }
-                print("after updating profile url")
-                print(Auth.auth().currentUser?.photoURL)
-                
-            }
-        }
+            self.uploadViewModal?.updateProfile(image: image, name: self.nameTextFiled.text!, previousImageURL: Auth.auth().currentUser?.photoURL?.absoluteString)        }
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
         
     }
     
+    private func makeAnAlert(title: String, Description: String) {
+        let alert = UIAlertController.init(title: title, message: Description, preferredStyle: .alert)
+        let okButton = UIAlertAction.init(title: "ok", style: .default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
+    }
     
 }
 
@@ -86,5 +84,17 @@ extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigati
         let imageTobeShowed = info[.originalImage] as? UIImage
         self.profileImage.image = imageTobeShowed?.scaleToSize(aSize: CGSize(width: 100, height: 100))
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension EditProfileViewController: UploadViewModalProtocol {
+    func didFinishUploading(result: Result<Bool, Error>) {
+        switch result {
+        case .success( _):
+            self.tabBarController?.selectedIndex = 0
+        case .failure:
+            self.makeAnAlert(title: "Error", Description: "There was an Error while uploading")
+            
+        }
     }
 }
